@@ -48,19 +48,16 @@ class LastFMClient:
     def _sanitize_tracks(self, tracks: Dict) -> List[Dict]:
         return [
             {
-                "artist": track["artists"],
-                "track": track["title"],
-                "album": track["album"],
+                "artist": track["artist"],
+                "title": track["title"],
                 "timestamp": track["played_at"],
+                "album": track["album"],
             }
             for track in tracks
         ]
 
     def scrobble_many(self, tracks: List[Dict]) -> None:
-        try:
-            self.lastfm.scrobble_many(tracks=self._sanitize_tracks(tracks))
-        except Exception as e:
-            print(f"[ERROR] Failed to scrobble tracks: {e}")
+        self.lastfm.scrobble_many(tracks=self._sanitize_tracks(tracks))
 
 
 class YTMusicClient:
@@ -100,9 +97,7 @@ class YTMusicClient:
         for track in today_history:
             try:
                 title = track["title"]
-                artists = ", ".join(
-                    [artist["name"] for artist in track["artists"]]
-                )
+                artist = track["artists"][0]["name"]
                 album = track["album"]["name"]
                 duration = track["duration"]
 
@@ -112,7 +107,7 @@ class YTMusicClient:
                 history.append(
                     {
                         "title": title,
-                        "artists": artists,
+                        "artist": artist,
                         "album": album,
                         "duration": duration,
                         "played_at": int(played_at.timestamp()),
