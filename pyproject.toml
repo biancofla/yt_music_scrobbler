@@ -1,0 +1,39 @@
+[project]
+name = "yt-music-scrobbler"
+version = "0.1.0"
+description = "A tool to scrobble YouTube Music tracks to Last.fm."
+authors = "Flavio Biancospino"
+readme = "README.md"
+requires-python = ">=3.11"
+
+dependencies = [
+    "autoflake>=2.3.1",
+    "black>=25.1.0",
+    "boto3>=1.40.1",
+    "isort>=6.0.1",
+    "pylast>=5.5.0",
+    "python-dotenv>=1.0.0",
+    "ytmusicapi>=1.10.3",
+]
+
+[dependency-groups]
+dev = [
+    "invoke>=2.2.0",
+]
+
+[tool.black]
+line-length = 80
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+no_lines_before = "LOCALFOLDER"
+
+[tool.autoflake]
+expand-star-imports = true
+remove-all-unused-imports = true
+recursive = true
+remove-unused-variables = true
+exclude = "__init__.py"
+in-place = true

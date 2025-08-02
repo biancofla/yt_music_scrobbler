@@ -1,0 +1,34 @@
+# Terraform state files.
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfvars
+
+# Python-generated files.
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments.
+.venv
+.python-version
+
+# Environment variables.
+.env
+
+# OAuth credentials.
+oauth.json
+
+# Output files.
+yt_music_history_*.json
+yt_music_scrobbles_*.json
+scrobbles_export_*.json
+
+# Misc files.
+.DS_Store
+tf/lambda/layer
+*.zip
