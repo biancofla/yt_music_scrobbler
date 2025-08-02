@@ -401,9 +401,9 @@ requires-dist = [
     { name = "black", specifier = ">=25.1.0" },
     { name = "boto3", specifier = ">=1.40.1" },
     { name = "isort", specifier = ">=6.0.1" },
-    { name = "pylast", specifier = ">=5.5.0" },
+    { name = "pylast", specifier = "==5.5.0" },
     { name = "python-dotenv", specifier = ">=1.0.0" },
-    { name = "ytmusicapi", specifier = ">=1.10.3" },
+    { name = "ytmusicapi", specifier = "==1.10.3" },
 ]
 
 [package.metadata.requires-dev]

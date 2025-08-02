@@ -2,7 +2,9 @@
 name = "yt-music-scrobbler"
 version = "0.1.0"
 description = "A tool to scrobble YouTube Music tracks to Last.fm."
-authors = "Flavio Biancospino"
+authors = [
+    { name = "Flavio Biancospino", email = "flavio.biancospino@gmail.com" }
+]
 readme = "README.md"
 requires-python = ">=3.11"
 
@@ -12,8 +14,8 @@ dependencies = [
     "boto3>=1.40.1",
     "isort>=6.0.1",
     "python-dotenv>=1.0.0",
-    "ytmusicapi=1.10.3",
-    "pylast=5.5.0",
+    "ytmusicapi==1.10.3",
+    "pylast==5.5.0",
 ]
 
 [dependency-groups]
