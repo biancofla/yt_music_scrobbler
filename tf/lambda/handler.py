@@ -166,10 +166,9 @@ def lambda_handler(event, context) -> Dict:
         lastfm_client.scrobble_many(tracks=history)
 
         print(f"[INFO] Scrobbled {len(history)} tracks to Last.fm.")
-
         return {
             "statusCode": 200,
-            "body": f"Today's scrobbles: {len(history)}.",
+            "body": f"Scrobbled {len(history)} tracks to Last.fm.",
         }
     except Exception as e:
         print(traceback.format_exc())
