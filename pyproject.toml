@@ -11,9 +11,9 @@ dependencies = [
     "black>=25.1.0",
     "boto3>=1.40.1",
     "isort>=6.0.1",
-    "pylast>=5.5.0",
     "python-dotenv>=1.0.0",
-    "ytmusicapi>=1.10.3",
+    "ytmusicapi=1.10.3",
+    "pylast=5.5.0",
 ]
 
 [dependency-groups]
