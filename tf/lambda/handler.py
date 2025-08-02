@@ -11,7 +11,7 @@ from ytmusicapi import OAuthCredentials, YTMusic
 class SSMClient:
     def __init__(self):
         self.ssm = boto3.client("ssm")
-        self.prefix = "/yt_music_scrobbler"
+        self.prefix = "/yt-music-scrobbler"
 
     def get_parameter(self, name: str, decrypt: bool = True) -> str:
         response = self.ssm.get_parameter(
