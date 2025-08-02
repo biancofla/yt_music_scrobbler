@@ -12,6 +12,6 @@ mkdir -p layer/python
 
 # Install dependencies.
 echo "Installing production dependencies for Lambda Layer..."
-uv pip install --system --target layer/python boto3 ytmusicapi
+uv pip install --system --target layer/python boto3 ytmusicapi pylast
 
 echo "Lambda Layer dependencies installed successfully!"
