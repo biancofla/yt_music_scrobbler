@@ -2,7 +2,7 @@ resource "aws_cloudwatch_event_rule" "lambda_scrobbler_trigger" {
   name                = local.lambda_scrobbler_trigger_name
   description         = "Trigger Lambda function daily, at 23:50 UTC."
   schedule_expression = "cron(50 23 * * ? *)"
-  state               = "DISABLED"
+  state               = "ENABLED"
 }
 
 resource "aws_cloudwatch_event_target" "lambda_scrobbler_target" {
