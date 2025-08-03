@@ -170,7 +170,7 @@ def lambda_handler(event, context) -> Dict:
         print(traceback.format_exc())
         return {
             "statusCode": 500,
-            "body": f"An error occurred during the scrobble process: {str(e)}.",
+            "body": f"An error occurred during the scrobbling process: {str(e)}.",
         }
 
 

@@ -15,6 +15,10 @@ terraform {
 
 provider "aws" {
   region = var.aws_region
+
+  default_tags {
+    tags = aws_servicecatalogappregistry_application.yt_music_scrobbler.application_tag
+  }
 }
 
 data "aws_caller_identity" "current" {}
