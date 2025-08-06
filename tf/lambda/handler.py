@@ -62,7 +62,6 @@ class LastFMClient:
 
 
 class YTMusicClient:
-
     def __init__(
         self,
         client_id: str,
@@ -92,8 +91,11 @@ class YTMusicClient:
         )
         today_history.reverse()
 
-        history, today = [], datetime.now(timezone.utc).replace(
-            hour=0, minute=0, second=0, microsecond=0
+        history, today = (
+            [],
+            datetime.now(timezone.utc).replace(
+                hour=0, minute=0, second=0, microsecond=0
+            ),
         )
         for track in today_history:
             try:
@@ -118,8 +120,9 @@ class YTMusicClient:
                 today = played_at + timedelta(
                     minutes=int(duration_min), seconds=int(duration_sec)
                 )
-            except KeyError as e:
-                print("[WARNING] Missing key in track data: ", e)
+            except Exception as e:
+                print("[WARNING] Error while processing track: ", e)
+                print("[WARNING] Track data: ", track)
                 continue
 
         return history
