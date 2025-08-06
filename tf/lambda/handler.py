@@ -73,8 +73,9 @@ class YTMusicClient:
             client_secret=client_secret,
         )
 
-        oauth, now = json.loads(oauth_file), int(
-            datetime.now(timezone.utc).timestamp()
+        oauth, now = (
+            json.loads(oauth_file),
+            int(datetime.now(timezone.utc).timestamp()),
         )
         if now > oauth.get("expires_at"):
             oauth["access_token"] = oauth_credentials.refresh_token(
