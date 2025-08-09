@@ -46,7 +46,7 @@ class LastFMClient:
             password_hash=password_hash,
         )
 
-    def _sanitize_tracks(self, tracks: Dict) -> List[Dict]:
+    def _sanitize_tracks(self, tracks: List[Dict]) -> List[Dict]:
         return [
             {
                 "artist": track["artist"],
